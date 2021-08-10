@@ -1,0 +1,117 @@
+nav {
+    padding: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #111;
+}
+
+.page {
+  padding: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-left {
+    flex-grow: 1;
+    padding: 1em;
+    margin: 0.3em;
+    /*border: solid 1px black;*/
+}
+
+.flex-center {
+    flex-grow: 8;
+    padding: 1em;
+    margin: 0.3em;
+    min-height: 90%;
+    background-color: #eee;
+    border: solid 1px #333;
+    box-shadow: 2px 2px 4px black;
+}
+
+.flex-center textarea, input[type="text"] {
+    background-color: #ddd;
+    border: solid 1px #333;
+}
+
+
+.flex-center textarea:active, input[type="text"]:after {
+    box-shadow: 2px 2px 4px black;
+}
+
+.flex-right {
+    flex-grow: 2;
+    padding: 1em;
+    margin: 0.3em;
+}
+
+.posts {
+    margin: 1em;
+    padding: 1em;
+    background-color: #ddd;
+    border: solid 1px black;
+    box-shadow: 2px 2px 4px #000000;
+    transition: 0.1s;
+ }
+
+.posts a {
+    color: var(--txt-color);
+    text-decoration: none;
+}
+
+.posts:hover {
+    box-shadow: 4px 4px 8px #000000;
+}
+
+.post-title {
+    font-size: 1.5em;
+}
+
+.post-text {
+    margin: 1em;
+}
+
+.btn {
+  padding: 5px 15px;
+  margin: 0.5em 0em;
+  background: #008500;
+  color: #FFFFFF;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  border-radius: 5px;
+  min-width: 100px;
+  width: 4rem;
+  transition-duration: 0.4s;
+
+}
+
+

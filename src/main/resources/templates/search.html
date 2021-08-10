@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Index page</title>
+    <object th:include="fragments/head :: head" th:remove="tag"></object>
+</head>
+<body>
+<div th:include="fragments/topmenu :: header"></div>
+
+<div class="page">
+    <div class="error" th:if="${error}" th:text="${error}"></div>
+    <div class="flex-container">
+        <div class="flex-left">
+        </div>
+        <div class="flex-center">
+            <div class="search">
+                <form th:action="@{/searchResults/}" method="POST">
+                    <dl>
+                        <dt>Search:</dt>
+                        <dd><input type="text" id="query" name="query"></dd>
+                        <dd><input type="submit" value="Search" class="btn"></dd>
+                    </dl>
+                </form>
+            </div>
+            <div th:if="${blogposts != null}">
+                <div th:each="post: ${blogposts}" class="posts">
+                    <h3><a th:text="${post.title}" th:href="@{'/post/'+${post.id}}" class="post-title"></a></h3>
+                    <div th:text="${post.added}" class="post-added"></div>
+                    <div th:text="${post.text}" class="post-text"></div>
+                    <form th:action="@{'/remove/'+${post.id}}" th:id="${post.id}" method="POST">
+                        <input type="submit" value="Delete" class="btn">
+                    </form>
+                </div>
+            </div>
+
+            <div th:if="${blogposts == null}">
+                No results :(
+            </div>
+
+        </div>
+        <div class="flex-right">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
