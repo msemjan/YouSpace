@@ -13,7 +13,7 @@ public interface PostMongoRepository extends MongoRepository<Post, ObjectId> {
     @Query(value="{id: ?0}")
     Post findPostById(ObjectId id);
 
-    @Query(value="{$or: [{text: /?0/}, {title: /?0/}]}")
+    @Query(value="{$or: [{text: /?0/}, {title: /?0/}]}", sort="{added: -1}")
     List<Post> searchPosts(String query);
 
     @Query(value="{id: {$exists: 1}}", sort="{added: -1}")
