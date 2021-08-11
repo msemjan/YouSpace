@@ -1,21 +1,13 @@
 package sk.youSpace.app.controller;
 
-import org.bson.BsonBinarySubType;
-import org.bson.types.Binary;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.repository.support.SimpleMongoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import sk.youSpace.app.model.RequestQuery;
 import sk.youSpace.app.repository.PostMongoRepository;
 import sk.youSpace.app.model.Post;
-
-import java.util.List;
 
 @Controller
 public class BlogController {
@@ -79,11 +71,6 @@ public class BlogController {
     @RequestMapping(value = "/searchResults/", method = {RequestMethod.POST, RequestMethod.GET})
     public String searchPost(@ModelAttribute("query") RequestQuery query, Model model) {
         var posts = postMongoRepository.searchPosts(query.getQuery());
-        if(posts==null || posts.isEmpty()){
-            posts.add(new Post());
-            posts.get(0).setTitle("Sadly");
-            posts.get(0).setText("No posts were found...");
-        }
         model.addAttribute("blogposts", posts);
 
         return "search";
