@@ -55,6 +55,7 @@ nav li a:hover {
     background-color: #eee;
     border: solid 1px #333;
     box-shadow: 2px 2px 4px black;
+    border-radius: 5px;
 }
 
 .flex-center textarea, input[type="text"] {
@@ -80,6 +81,7 @@ nav li a:hover {
     border: solid 1px black;
     box-shadow: 2px 2px 4px #000000;
     transition: 0.1s;
+    border-radius: 5px;
  }
 
 .posts a {
